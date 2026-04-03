@@ -1,2 +1,2 @@
-# Html
-https://stevejs-droid.github.io/Html/ # Simple Calculator
+# Simple Calculator
+https://stevejs-droid.github.io/Html/ 
