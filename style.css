@@ -11,6 +11,14 @@ body {
   justify-content: center;
   align-items: center;
   background: #dbe4f0;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 .calculator {
@@ -54,10 +62,16 @@ button {
   font-size: 20px;
   cursor: pointer;
   background: #d9d9e0;
+  transition: all 0.2s ease;
 }
 
 button:hover {
   opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.96);
 }
 
 .clear {
@@ -68,4 +82,94 @@ button:hover {
   grid-column: span 2;
   background: #2f65e5;
   color: white;
+}
+
+/* ===========================
+   History Panel
+=========================== */
+
+.history {
+  width: 390px;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.history-header h2 {
+  color: #163d96;
+  font-size: 22px;
+}
+
+#clearHistoryBtn {
+  height: auto;
+  padding: 8px 14px;
+  background: #2f65e5;
+  color: white;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+#historyList {
+  list-style: none;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+#historyList li {
+  background: #ececec;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 18px;
+  word-break: break-word;
+}
+
+#historyList:empty::before {
+  content: "No calculations yet.";
+  display: block;
+  color: #777;
+  text-align: center;
+  padding: 20px 0;
+  font-style: italic;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media (max-width: 450px) {
+  .calculator,
+  .history {
+    width: 100%;
+  }
+
+  .calculator h1 {
+    font-size: 24px;
+  }
+
+  #display {
+    font-size: 22px;
+  }
+
+  button {
+    height: 60px;
+    font-size: 18px;
+  }
+
+  .history-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #clearHistoryBtn {
+    width: 100%;
+  }
 }
